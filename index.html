@@ -20,7 +20,7 @@
     </script>
 </head>
 
-<title>CoRL 2025 Submission #38</title>
+<title>CoRL 2025 </title>
 
 <div class="col-sm-12" style="text-align: center;">
     <h1 class="name" style="font-family:'Inter';font-weight: 500;"><span>Elucidating the Design Space of </span><span>
@@ -30,13 +30,13 @@ Torque-aware Vision-Language-Action Models</span><br>
             <span class="author-block">
             Zongzheng Zhang</a><sup>*1,2</sup>,</span>
             <span class="author-block">
-            <a href="https://hsu1023.github.io">Haobo Xu</a><sup>*1</sup>,</span>
+            Chenghao Yue</a><sup>*1</sup>,</span>
             <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=AntTZW8AAAAJ">Zhuo Yang</a><sup>*1</sup>,</span>
+            <a href="https://hsu1023.github.io">Haobo Xu</a><sup>*1</sup>,</span><br>
             <span class="author-block">
-            Chenghao Yue</a><sup>1</sup>,</span>
+            Minwen Liao</a><sup>1</sup>,</span>
             <span class="author-block">
-            Zehao Lin</a><sup>1</sup>,</span>
+            Xianglin Qi</a><sup>1</sup>,</span>
             <span class="author-block">
             <a href="https://c7w.tech/">Huan-ang Gao</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -75,6 +75,34 @@ Torque-aware Vision-Language-Action Models</span><br>
 </div>
 </div>
 </div>
+<section class="section" id="Abstract">
+    <div class="container text-center">
+  
+      <hr>
+      <h1 style="text-align:center; margin-top: 0; margin-bottom: 10pt; font-family:'Inter';">Abstract</h1>
+  
+      <div class="col-12 text-center">
+        <p style="text-align:left; color:#000000; font-size:0.95em;">
+          Robotic chemists promise to both liberate human experts from repetitive tasks and accelerate scientific discovery, yet remain in their infancy. Chemical experiments involve long-horizon procedures over hazardous and deformable substances, where success requires not only task completion but also strict compliance with experimental norms. To address these challenges, we propose <em>RoboChemist</em>, a dual-loop framework that integrates Vision-Language Models (VLMs) with Vision-Language-Action (VLA) models. Unlike prior VLM-based systems (e.g., VoxPoser, ReKep) that rely on depth perception and struggle with transparent labware, and existing VLA systems (e.g., RDT, &pi;<sub>0</sub>) that lack semantic-level feedback for complex tasks, our method leverages a VLM to serve as (1) a planner to decompose tasks into primitive actions, (2) a visual prompt generator to guide VLA models, and (3) a monitor to assess task success and regulatory compliance. Notably, we introduce a VLA interface that accepts image-based visual targets from the VLM, enabling precise, goal-conditioned control. Our system successfully executes both primitive actions and complete multi-step chemistry protocols. Results show <strong>23.57%</strong> higher success rate and a <strong>0.298</strong> increase in compliance rate over state-of-the-art VLA baselines, while also demonstrating strong generalization to objects and tasks.
+        </p>
+      </div>
+    </div>
+  
+    
+    <div class="container text-center my-4">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <img src="./teaser.png" alt="RoboChemist Teaser" class="img-fluid" style="max-width:85%; height:auto;">
+            <p class="text-left mt-3" style="font-size:0.9em;">
+              (a) <strong>Overview of <em>RoboChemist</em></strong>. The VLM in our system acts as the planner, decomposing high-level tasks into subtasks. Based on each subtask, the VLM generates prompted images through visual prompting and provides them, along with other relevant information, to the VLA models. The VLM also functions as the monitor, assessing the completion status of subtasks, thus ensuring a complete feedback loop in the system.<br><br>
+              (b) <em>RoboChemist</em> outperforms baselines in both primitive tasks and complete chemical experiment tasks.<br><br>
+              (c) Some tasks performed by <em>RoboChemist</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
     <section class="section" id="Primitive Tasks">
         <div class="container">
           
@@ -511,6 +539,39 @@ Torque-aware Vision-Language-Action Models</span><br>
             </div>
 
     </div>
-</section>
+</section><br>
 
+<section class="section" id="Acknowledgements">
+    <div class="container text-center">
+      <div class="container">
+        
+        <hr>
+        <h1 style="text-align:center; margin-top: 0pt; margin-bottom: 10pt;font-family:'Inter';">Citation</h1>
+        <p style="text-align:left">
+          We kindly request that you cite our work if you utilize the code or reference our findings in your research.
+        </p>
+        
+        <div class="col-12 text-center">
+          <pre style="text-align:left;color: #aaaaaa; font-size:0.7em;" class="pre">
+  @inproceedings{zhang2025robochemist,
+    title={RoboChemist: Vision-Language-Action Models for Robotic Chemistry},
+    author={Zhang, Zongzheng and Yue, Chenghao and Xu, Haobo and Liao, Minwen and Qi, Xianglin and Gao, Huan-ang and Wang, Ziwei and Zhao, Hao},
+    booktitle={Conference on Robot Learning (CoRL)},
+    year={2025}
+  }
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+  </style>
 </div>
