@@ -1,0 +1,170 @@
+body {
+font-family: Roboto, "Roboto", sans-serif;
+background: #FFFFFF;
+color: #696969;
+padding: 0px 40px 40px 40px;
+}
+h1 { 
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    color: #000;
+    }
+h2 { 
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    color: #000;
+    }
+h3 { 
+    display: block;
+    font-size: 1em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    }
+h4 { 
+    display: block;
+    font-size: 1.4em;
+    margin-top: 0.0em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    color: #000;
+    }
+img {
+margin: 0px 0px 0px 0;
+}
+.img {
+/*box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);*/
+margin: 0px 0px 0px 0;
+}
+.logos {
+margin: 0px 10px 10px 0;
+}
+.ib {
+display: inline-block;
+margin: 00px 20px 20px 0px;
+}
+.footer {
+margin: 20px 0px 50px 0px;
+width: 100%;
+height: 100px;
+float: center;
+position: relative;
+min-width: 800px;
+}
+.footerG {
+margin: 20px 0px 0px 0px;
+width: 200px;
+height: 100px;
+float: left;
+position: relative;
+}
+.footerD {
+margin: 20px 100px 0px 0px;
+width: 300px;
+height: 100px;
+float: right;
+position: relative;
+}
+.main {
+margin: 0px 80px 0px 0px;
+width: 100%;
+float: left;
+position: relative;
+}
+.superhero {
+width: 100%;
+/* height: 600px; */
+position: relative;
+min-width: 800px;
+}
+.title {
+margin: 50px 0px 10px 0px;
+width: 800px;
+/* height: 500px; */
+float: left;
+position: relative;
+}
+.paper {
+margin: 150px 100px 0px 0px;
+width: 200px;
+height: 500px;
+float: right;
+position: relative;
+}
+h1.name {
+font-size: 40px;
+font-weight: 300;
+margin-bottom: 10px;
+display: inline-block;
+}
+.email {
+display: block;
+font-size: 19px;
+font-weight: 300;
+color: #81899C;
+margin-top: 0px;
+display: inline-block;
+}
+
+.lead {
+font-size: 20px;
+font-weight: 300;
+margin-top: 0px;
+line-height: 30px;
+display: inline-block;
+}
+.names {
+font-size: 20px;
+font-weight: 300;
+margin-top: 0px;
+line-height: 20px;
+display: inline-block;
+}
+.video-container {
+position: relative;
+padding-bottom: 56.25%; /* 16:9 */
+height: 0;
+}
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+a.pagelink:link,
+a.pagelink:visited,
+a.pagelink:active { color: #81899C; text-decoration: none; }
+a.pagelink:hover { color: #006699; text-decoration: underline; }
+
+#videoal {
+    /* ... put any margin, padding, etc. here you like */
+}
+
+#videoal div.video {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    width: 500px;
+    /* height: 200px; */
+    margin: 0 10px 10px 0;
+}
+
+#videoal div.video video {
+    width: 100%;
+    height: 100%;
+}
