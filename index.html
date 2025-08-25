@@ -1,0 +1,503 @@
+<!doctype html><meta charset=utf-8>
+
+<head>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="css/misc.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '');
+    </script>
+</head>
+
+<title>CoRL 2025 Submission #38</title>
+
+<div class="col-sm-12" style="text-align: center;">
+    <h1 class="name" style="font-family:'Inter';font-weight: 500;"><span>RoboChemist: Long-Horizon and Safety-Compliant</span><span>
+Robotic Chemical Experimentation</span><br>
+</div>
+<!-- Table of Contents -->
+<div class="col-sm-12" style="font-family:'Helvetica';text-align: center;">
+    <a style="font-family:'Inter';font-size:1.25em;">Paper Submission #38</a>
+    <br>
+    <a style="font-family:'Inter';font-size:1.15em;color:#4B9AE7">Anonymous Author(s)</a><br>
+
+    <a style="font-family:'Inter';font-size:1.05em;">Affiliation</a><br>
+
+    <!-- <h3>Table of Contents</h3>
+    <ul style="list-style-type: none; padding: 0;">
+        <li><a href="#baseline-comparisons">Baseline Comparisons</a></li>
+        <li><a href="#dynamics-effects">Dynamics Effects</a></li>
+        <li><a href="#applications">Applications</a></li>
+    </ul> -->
+</div>
+
+<div class="main">
+    <div class="container">
+<div class="container text-center">
+                <div class="row align-items-center my-4">
+<div class="col-lg-2 col-md-2 col-sm-0 col-0 text-center"></div>
+                    <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">Thermal Decomposition of Cu(OH)\(_2\)</h5>
+                    </div> -->
+
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/pipeline.mp4" type="video/mp4">
+                    </video> 
+                    </div><h5 class="mt-2" style="font-size:0.95em">Pipeline (played at 2x speed)</h5>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-0 col-0 text-center"></div>
+</div>
+</div>
+</div>
+    <section class="section" id="Primitive Tasks">
+        <div class="container">
+          
+            <hr>
+            <h1 style="text-align:center; margin-top: 0pt; margin-bottom: 10pt;font-family:'Inter';">Primitive Tasks</h1>
+
+            <div class="col-12 text-center">
+                <p style="text-align:center">
+                    In this section, we present the videos of seven primitive tasks that are used to build the complete tasks and their correspondingvisual prompt examples. The videos are played at 1x speed.<br>
+                </p>
+            </div><br>
+            <div class="container text-center">
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Grasp the Glass Rod"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/Grasp_the_Rod.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <video controls loop autoplay muted>
+                            <source src="./videos/primitive/grasp_glass_rod.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+                
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Heat Platium Wire"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/heating_platinum_wire.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                <video controls loop autoplay muted>
+                                <source src="./videos/primitive/heating_platinum_wire.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Insert Into Solution"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/insert_into_solution.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/primitive/insert_into_solution.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Pour Liquid"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/Pour_Liquid.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/primitive/pour_liquid.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Stir Liquid"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/Stir_Liquid.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                                        <source src="./videos/primitive/stir_liquid.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Transfer Solid"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/Transfer_Solid.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/primitive/transfer_solid.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12 text-center">
+                        <h5 class="mt-2">"Press Button"</h5>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                        <img src="./images/Press_Button.png" alt="Prompted Image" class="img-fluid">
+                    <h5 class="mt-2">Prompted Image</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/primitive/press_button.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <h5 class="mt-2">Video</h5>
+                    </div>
+
+                </div>
+            </div><br>
+        </div>
+    </section><br>
+
+    <section class="section" id="complete-tasks">
+        <div class="container">
+            <hr>
+            <h1 style="text-align:center; margin-top: 0pt; margin-bottom: 10pt;font-family:'Inter';">Complete Tasks</h1>
+
+            <div class="col-12 text-center">
+                <p style="text-align:center">
+                    In this section, we present videos of several complete tasks that our RoboChemist can perform. The videos are played at 1x speed.<br>
+                </p>
+            </div><br>
+
+            <div class="container text-center">
+                <div class="row align-items-center my-4">
+                     <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                        <h5 class="mt-2">Mixing NaCl and CuSO\(_4\)Solutions</h5>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/complete/Mixing_NaCl_and_CuSO4_Solutions.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                    </div>
+
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                        <h5 class="mt-2">Flame Test of  CuSO\(_4\) Solution</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/primitive/glass_rod.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                    </div> -->
+                </div>
+                <div class="row align-items-center my-4">
+                     <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                        <h5 class="mt-2">Thermal Decomposition of Cu(OH)\(_2\)</h5>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/complete/Thermal_Decomposition.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                    </div>
+                </div>
+                <div class="row align-items-center my-4">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                        <h5 class="mt-2">Flame Test of CuSO\(_4\) Solution</h5>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <video controls loop autoplay muted>
+                            <source src="./videos/complete/Flame_Test_of_CuSO4_Solution.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center my-4">
+                     <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                        <h5 class="mt-2">
+                            
+                            
+                            Evaporation of NaCl Solution</h5>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video controls loop autoplay muted>
+                                        <source src="./videos/complete/Evaporation_of_NaCl_Solution.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                    </div>
+                </div>
+            </div><br>
+
+            <br>
+        </div>
+    </section>
+
+    <section class="section" id="generalization">
+        <div class="container">
+            <hr>
+            <h1 style="text-align:center; margin-top: 0pt; margin-bottom: 10pt;font-family:'Inter';">Generalization</h1>
+
+            <div class="col-12 text-left">
+                <p style="text-align:left">
+                    In this section, we present videos of several generalization tasks that our RoboChemist can perform. The videos are played at 1x speed.<br>
+                </p>
+            </div>
+            <div class="col-12 text-center">
+                <h3 style="text-align:center; font-size:1.5em; color: #4f4747;font-family:'Inter';">
+                    Primitive Task Generalization
+                </h3>
+            </div>
+            <div class="row align-items-center my-4">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Place Glass Rod</h5>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Place_Glass_Rod.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Grasp Test Tube</h5>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Grasp_Test_Tube.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+            <div class="row align-items-center my-4">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Stir Solid Reagents</h5>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Stir_Solid_Reagents.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Heat Test Tube</h5>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Heat_Test_Tube.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+
+                
+            </div>
+            <div class="row align-items-center my-4"><div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Insert a Thermometer</h5>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Insert_a_Thermometer.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Place Test Tube into Cooling Liquid</h5>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Place_Test_Tube_into_Cooling_Liquid.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+
+            </div><br>
+                        <div class="col-12 text-center">
+                <h3 style="text-align:center; font-size:1.5em; color: #4f4747;font-family:'Inter';">
+                    Complete Task Generalization
+                </h3>
+            </div>
+            <div class="row align-items-center my-4">
+
+                <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Combination Reaction: CaO+H\(_2\)O</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Combination_Reaction.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center my-4">
+
+                <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Decomposition Reaction: H\(_2\)O\(_2\)</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Decomposition_Reaction.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center my-4">
+
+                <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Displacement Reaction: Fe+CuSO\(_4\)</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Displacement_Reaction1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center my-4">
+                <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Displacement Reaction: Zn+HCl</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Displacement_Reaction2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center my-4">
+                <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Double Displacement Reaction: NaOH+CuSO\(_4\)</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Double_Displacement_Reaction1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center my-4">
+                <div class="col-lg-1 col-md-1 col-sm-0 col-0 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center">
+                    <h5 class="mt-2">Double Displacement Reaction: NaHCO\(_3\)+HCl</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-8 col-8 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls loop autoplay muted>
+                        <source src="./videos/generalization/Double_Displacement_Reaction2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+</div>
